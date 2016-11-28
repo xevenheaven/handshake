@@ -62,3 +62,31 @@ App.controller('SignInController', function SignInController($scope, $state) {
 		});
 	};
 });
+
+App.controller('SignUpController', function SignUpController($scope, $state) {
+	$scope.name;
+	$scope.email;
+	$scope.password;
+	$scope.profession;
+	$scope.company;
+
+	$scope.back = function () {
+		$state.go('splash');
+	};
+
+	$scope.submit = function () {
+		dpd.users.post({
+			username: $scope.email,
+			password: $scope.password,
+			name: $scope.name,
+			profession: $scope.profession,
+			company: $scope.company
+		}, function(session, error) {
+			if (error) {
+				alert('Please fill in the missing fields!');
+			} else {
+				$state.go('welcome');
+			}
+		});
+	};
+});

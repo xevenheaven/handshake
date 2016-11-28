@@ -1,0 +1,50 @@
+<div ng-controller="SignUpController"
+	class="signup-screen"
+	layout="column"
+	layout-align="center center">
+	<div>
+		<img class="title" src="images/meettens_text.png" />
+	</div>
+	<div class="description">
+		set up your profile!
+	</div>
+	<div class="input-form">
+		<form name="signup">
+			<div layout="row" layout-align="space-around center">
+				<div>
+					<label for="upload">
+						<div class="upload">
+							<img class="camera" src="./images/camera.png" />
+						</div>
+						<input type="file" id="upload" accept="image/*" style="display:none"/>
+					</label>
+				</div>
+				<div>
+					<md-input-container class="md-block">
+						<input type="name" placeholder="name" ng-model="name" required />
+					</md-input-container>
+				</div>
+			</div>
+			<md-input-container class="md-block">
+				<input type="text" placeholder="email" ng-model="email" required />
+			</md-input-container>
+			<md-input-container class="md-block">
+				<input type="password" placeholder="password" ng-model="password" required />
+			</md-input-container>
+			<md-input-container class="md-block">
+				<input type="text" placeholder="profession" ng-model="profession" required />
+			</md-input-container>
+			<md-input-container class="md-block">
+				<input type="text" placeholder="company" ng-model="company" required />
+			</md-input-container>
+		</form>
+	</div>
+	<div class="button-footer" layout="row" layout-align="space-around center">
+		<div>
+			<md-button class="back" type="button" ng-click="back()">back</md-button>
+		</div>
+		<div>
+			<md-button class="submit" type="submit" ng-click="submit()">done!</md-button>
+		</div>
+	</div>
+</div>
