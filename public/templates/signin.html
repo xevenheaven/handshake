@@ -1,0 +1,26 @@
+<div ng-controller="SignInController"
+	class="signin-screen"
+	layout="column"
+	layout-align="center center">
+	<div>
+		<img class="title" src="images/meettens_text.png" />
+	</div>
+	<div class="input-form">
+		<form name="signin">
+			<md-input-container class="md-block">
+				<input type="text" placeholder="email" ng-model="email" required />
+			</md-input-container>
+			<md-input-container class="md-block">
+				<input type="password" placeholder="password" ng-model="password" required />
+			</md-input-container>
+		</form>
+	</div>
+	<div class="button-footer" layout="row" layout-align="space-around center">
+		<div>
+			<md-button class="back" type="button" ng-click="back()">back</md-button>
+		</div>
+		<div>
+			<md-button class="submit" type="submit" ng-click="submit()">sign in!</md-button>
+		</div>
+	</div>
+</div>

@@ -67,3 +67,64 @@ html, body {
 		width: 40%;
 	}
 }
+
+/*** SIGN IN SCREEN ***/
+
+.signin-screen {
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.input-form {
+	width: 100%;
+}
+
+.input-form form {
+	margin: 0 auto;
+	width: 40%;
+}
+
+md-input-container {
+	text-align: left;
+}
+
+md-input-container .md-input {
+	color: #709C90;
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused label {
+	color: #EEC056;
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+	border-color: #EEC056;
+}
+
+.button-footer {
+	width: 40%;
+}
+
+.button-footer .md-button {
+	border-radius: 50px;
+	min-width: 120px;
+	text-transform: lowercase;
+}
+
+.button-footer .md-button.back {
+	border: 2px solid #709C90;
+	color: #709C90;
+}
+
+.button-footer .md-button.submit {
+	background: #EED95B;
+	font-weight: 700;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.input-form form {
+		margin: 0 auto;
+		width: 70%;
+	}
+}
