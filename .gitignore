@@ -1,2 +1,6 @@
 .dpd
+.DS_Store
 data/
+node_modules/
+public/images
+public/lib

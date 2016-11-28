@@ -4,6 +4,7 @@
   "description": "Know others through handshake!",
   "main": "index.js",
   "scripts": {
+    "start": "dpd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/xevenheaven/handshake/issues"
   },
-  "homepage": "https://github.com/xevenheaven/handshake#readme"
+  "homepage": "https://github.com/xevenheaven/handshake",
+  "dependencies": {
+    "deployd": "^0.8.9"
+  }
 }
