@@ -9,13 +9,21 @@
 			"id": "name",
 			"order": 0
 		},
-		"email": {
-			"name": "email",
+		"profession": {
+			"name": "profession",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
-			"id": "email",
+			"id": "profession",
 			"order": 1
+		},
+		"company": {
+			"name": "company",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "company",
+			"order": 2
 		},
 		"photo": {
 			"name": "photo",
@@ -23,7 +31,7 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "photo",
-			"order": 2
+			"order": 3
 		},
 		"dob": {
 			"name": "dob",
@@ -31,7 +39,7 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "dob",
-			"order": 3
+			"order": 4
 		},
 		"contact": {
 			"name": "contact",
@@ -39,7 +47,7 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "contact",
-			"order": 4
+			"order": 5
 		},
 		"address": {
 			"name": "address",
@@ -47,23 +55,7 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "address",
-			"order": 5
-		},
-		"company": {
-			"name": "company",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "company",
 			"order": 6
-		},
-		"profession": {
-			"name": "profession",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "profession",
-			"order": 7
 		}
 	}
 }
