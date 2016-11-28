@@ -1,0 +1,69 @@
+{
+	"type": "UserCollection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"email": {
+			"name": "email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "email",
+			"order": 1
+		},
+		"photo": {
+			"name": "photo",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "photo",
+			"order": 2
+		},
+		"dob": {
+			"name": "dob",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dob",
+			"order": 3
+		},
+		"contact": {
+			"name": "contact",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "contact",
+			"order": 4
+		},
+		"address": {
+			"name": "address",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "address",
+			"order": 5
+		},
+		"company": {
+			"name": "company",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "company",
+			"order": 6
+		},
+		"profession": {
+			"name": "profession",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "profession",
+			"order": 7
+		}
+	}
+}
