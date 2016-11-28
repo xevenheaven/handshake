@@ -1,0 +1,69 @@
+html, body {
+	background: #E7EFF1;
+	font-family: 'Nunito', sans-serif;
+	font-size: 1em;
+}
+
+/*** SPLASH SCREEN ***/
+
+.splash-screen {
+	color: #5B6C70;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.title {
+	padding-bottom: 30px;
+	width: 50%;
+}
+
+.logo {
+	padding-bottom: 30px;
+	width: 20%;
+}
+
+.description {
+	font-size: larger;
+	font-weight: 700;
+	padding-bottom: 30px;
+}
+
+.splash-btn {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.splash-btn:hover {
+	cursor: pointer;
+}
+
+.signin {
+	background: #EED95B;
+}
+
+.signup {
+	background: #EEC056;
+}
+
+.btn-header {
+	font-size: larger;
+	font-weight: 700;
+	padding-bottom: 5px;
+}
+
+.btn-footer {
+	font-weight: 300;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.title {
+		padding-bottom: 30px;
+		width: 80%;
+	}
+
+	.logo {
+		padding-bottom: 30px;
+		width: 40%;
+	}
+}
