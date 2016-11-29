@@ -29,7 +29,11 @@ App.config(function($stateProvider) {
 		name: 'profile',
 		url: '/profile',
 		templateUrl: './templates/profile.html',
-		params: {user: {}}
+		params: {
+			me: {},
+			user: {},
+			handImg: './images/no-meetten.jpg'
+		}
 	};
 
 	$stateProvider.state(splash);
@@ -109,6 +113,7 @@ App.controller('WelcomeController', function WelcomeController($scope, $state, $
 	}
 
 	dpd.users.me(function (user) {
+		$scope.me = user;
 		$scope.name = user.name;
 		$scope.meettens = user.meettens || [];
 		$scope.userImg = user.photo || './images/default.jpg';
@@ -148,11 +153,25 @@ App.controller('WelcomeController', function WelcomeController($scope, $state, $
 
 	$scope.triggerUser = function (user) {
 		$state.go('profile', {
-			user: user
+			me: $scope.me,
+			user: user,
+			handImg: $scope.meettenImgSrc
 		});
 	};
 });
 
 App.controller('ProfileController', function ProfileController($scope, $state, $stateParams) {
+	window.scrollTo(0, 0);
+
+	$scope.me = $stateParams.me;
 	$scope.user = $stateParams.user;
+	$scope.handImg = $stateParams.handImg;
+
+	$scope.back = function () {
+		$state.go('welcome');
+	};
+
+	$scope.connect = function () {
+
+	};
 });

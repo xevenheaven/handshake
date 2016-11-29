@@ -1,0 +1,51 @@
+<div ng-controller="ProfileController"
+	class="profile-screen">
+	<div>
+		<img class="title" src="images/meettens_text.png" />
+	</div>
+	<div class="description">
+		you've met <span class="name">{{user.name}}!</span>
+	</div>
+	<div>
+		<div class="photo-group">
+			<div class="photo">
+				<img ng-src="{{me.photo || './images/default.jpg'}}" />
+			</div>
+			<div class="hand">
+				<img ng-src="{{handImg}}" />
+			</div>
+		</div>
+		<div class="photo-group right">
+			<div class="hand">
+				<img ng-src="{{handImg}}" />
+			</div>
+			<div class="photo">
+				<img ng-src="{{user.photo || './images/default.jpg'}}" />
+			</div>
+		</div>
+	</div>
+	<div class="event-details">
+		<div class="profile-title">meettened @</div>
+		<div class="event">Autodesk Conference</div>
+		<div>30 Nov 2016, {{user.time}}</div>
+	</div>
+	<div class="username">
+		{{user.name}}
+	</div>
+	<div>
+		<div class="profile-title">Profession</div>
+		<div class="profile-text">{{user.profession}}</div>
+	</div>
+	<div>
+		<div class="profile-title">Company</div>
+		<div class="profile-text">{{user.company}}</div>
+	</div>
+	<div class="button-footer">
+		<div>
+			<md-button class="back" type="button" ng-click="back()">back</md-button>
+		</div>
+		<div>
+			<md-button class="submit" type="submit" ng-click="connect()">connect!</md-button>
+		</div>
+	</div>
+</div>

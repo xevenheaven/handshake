@@ -3,7 +3,8 @@ html, body {
 	color: #5B6C70;
 	font-family: 'Nunito', sans-serif;
 	font-size: 1em;
-	margin: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 /*** SPLASH SCREEN ***/
@@ -194,7 +195,7 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 
 .profile {
-	margin-left: 90px;
+	margin-left: 65px;
 }
 
 .photo {
@@ -212,7 +213,7 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 
 .hand {
 	display: inline-block;
-	margin-left: -5px;
+	margin-left: -10px;
 	vertical-align: top;
 }
 
@@ -221,7 +222,7 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 
 .meettens > div {
-	min-height: 150px;
+	min-height: 100px;
 }
 
 .meettens > div:nth-child(2) {
@@ -277,6 +278,10 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	vertical-align: middle;
 }
 
+.meetten-info {
+	min-width: 100px;
+}
+
 .meettens-left img:hover,
 .meettens-right img:hover {
 	cursor: pointer;
@@ -314,24 +319,32 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	}
 
 	.profile {
-		margin-left: 60px;
+		margin-left: 50px;
 	}
 
 	.photo {
-		height: 150px;
-		width: 150px;
+		height: 130px;
+		width: 130px;
 	}
 
 	.photo img {
-		height: 150px;
+		height: 130px;
 	}
 
 	.hand {
-		margin-left: -10px;
+		margin-left: -7px;
 	}
 
 	.hand img {
 		width: 70px;
+	}
+
+	.meetten-name {
+		font-size: smaller;
+	}
+
+	.meetten-time {
+		font-size: x-small;
 	}
 
 	.meetten-photo {
@@ -341,5 +354,114 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 
 	.meetten-photo img {
 		height: 50px;
+	}
+}
+
+/*** PROFILE SCREEN ***/
+
+.profile-screen {
+	color: #7FA69C;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.profile-screen .description {
+	color: #69696A;
+}
+
+.profile-screen .photo {
+	height: 150px;
+	width: 150px;
+}
+
+.profile-screen .photo img {
+	height: 150px;
+}
+
+.photo-group {
+	display: inline-block;
+}
+
+.photo-group.right {
+	margin-left: -20px;
+}
+
+.hand img {
+	width: 70px;
+}
+
+.right .hand {
+	margin-left: 0;
+	margin-right: -7px;
+	margin-top: -5px;
+	-webkit-transform: scaleX(-1);
+	   -moz-transform: scaleX(-1);
+	     -o-transform: scaleX(-1);
+	        transform: scaleX(-1);
+}
+
+.profile-title {
+	color: #C9D0D1;
+	font-size: larger;
+}
+
+.profile-text {
+	color: #7D7E7F;
+	padding-top: 5px;
+	padding-bottom: 20px;
+}
+
+.event {
+	color: #69696A;
+	font-size: x-large;
+	font-weight: 700;
+}
+
+.event-details {
+	border-bottom: 2px solid #BCD2D6;
+	color: #7D7E7F;
+	display: inline-block;
+	padding-bottom: 40px;
+}
+
+.profile-screen .username {
+	color: #69696A;
+	font-size: x-large;
+	font-weight: 700;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.profile-screen .button-footer {
+	display: inline;
+	width: 40%;
+}
+
+.profile-screen .button-footer > div {
+	display: inline-block;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.profile-screen .photo {
+		height: 100px;
+		width: 100px;
+	}
+
+	.profile-screen .photo img {
+		height: 100px;
+	}
+
+	.profile-screen .hand img {
+		width: 50px;
+	}
+
+	.event-details {
+		padding-bottom: 30px;
+	}
+
+	.profile-screen .username {
+		padding-top: 20px;
 	}
 }

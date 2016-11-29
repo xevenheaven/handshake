@@ -15,9 +15,8 @@
 		</div>
 	</div>
 	<div class="meettens">
-		<div ng-if="!meettens.length"></div>
 		<div class="meettens-left"
-			ng-class="{'even': meettensLeft.length === meettensRight.length}">
+			ng-class="{'even': meettensLeft.length <= meettensRight.length}">
 			<div ng-repeat="meetten in meettensLeft"
 				class="meetten-group"
 				ng-click="triggerUser(meetten)">
@@ -31,7 +30,7 @@
 			</div>
 		</div>
 		<div class="meettens-right"
-			ng-class="{'even': meettensLeft.length === meettensRight.length}">
+			ng-class="{'even': meettensLeft.length <= meettensRight.length}">
 			<div ng-repeat="meetten in meettensRight"
 				class="meetten-group"
 				ng-click="triggerUser(meetten)">
