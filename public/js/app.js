@@ -108,7 +108,7 @@ App.controller('SignUpController', function SignUpController($scope, $state) {
 	};
 });
 
-App.controller('WelcomeController', function WelcomeController($scope, $state, $q) {
+App.controller('WelcomeController', function WelcomeController($scope, $state, $timeout, $q) {
 	$scope.connected = false;
 	$scope.meettenImgSrc = './images/no-meetten.png';
 
@@ -152,8 +152,13 @@ App.controller('WelcomeController', function WelcomeController($scope, $state, $
 	});
 
 	$scope.connect = function () {
-		$scope.connected = true;
-		$scope.meettenImgSrc = './images/meetten-autodesk.png';
+		$scope.connecting = true;
+
+		$timeout(function() {
+			$scope.connecting = false;
+			$scope.connected = true;
+			$scope.meettenImgSrc = './images/meetten-autodesk.png';
+		}, 0);
 	};
 
 	$scope.triggerUser = function (user) {

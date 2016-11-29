@@ -3,8 +3,8 @@ html, body {
 	color: #5B6C70;
 	font-family: 'Nunito', sans-serif;
 	font-size: 1em;
-	margin-bottom: 20px;
-	margin-top: 20px;
+	margin-bottom: 20px !important;
+	margin-top: 20px !important;
 }
 
 /*** SPLASH SCREEN ***/
@@ -199,6 +199,16 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	margin-left: 65px;
 }
 
+.scanning {
+	width: 200px;
+}
+
+.scanning-text {
+	font-size: x-large;
+	font-weight: 700;
+	padding-top: 40px;
+}
+
 .photo {
 	border: 5px solid #7FA69C;
 	border-radius: 50%;
@@ -324,6 +334,10 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	margin-right: auto;
 }
 
+.connect-btn {
+	padding-top: 200px;
+}
+
 @media only screen and (max-device-width: 480px) {
 	body {
 		overflow: auto;
@@ -331,6 +345,10 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 
 	.welcome-screen {
 		padding-top: 20px;
+	}
+
+	.scanning {
+		width: 150px;
 	}
 
 	.profile {

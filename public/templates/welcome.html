@@ -6,7 +6,7 @@
 	<div class="description">
 		welcome, <span class="name">{{name}}!</span>
 	</div>
-	<div class="profile">
+	<div class="profile" ng-if="!connecting">
 		<div class="photo">
 			<img ng-src="{{userImg}}" />
 		</div>
@@ -14,7 +14,11 @@
 			<img ng-src="{{meettenImgSrc}}" />
 		</div>
 	</div>
-	<div class="meettens">
+	<div ng-if="connecting">
+		<img class="scanning" src="./images/icon-scannin.png" />
+		<div class="scanning-text">scanning meetten...</div>
+	</div>
+	<div class="meettens" ng-if="!connecting">
 		<div class="meettens-left"
 			ng-class="{'even': meettensLeft.length <= meettensRight.length}">
 			<div ng-repeat="meetten in meettensLeft"
@@ -46,17 +50,18 @@
 			</div>
 		</div>
 	</div>
-	<div class="join-meetten"">
+	<div class="join-meetten" ng-if="!connecting">
 		<span ng-if="!connected">you don't have a meetten</span>
 		<span ng-if="connected && !meettens.length">you're all set!</span>
 	</div>
-	<div ng-if="!meettens.length">
+	<div ng-if="!meettens.length && !connecting">
 		<span ng-if="connected">start meeting new people!</span>
 	</div>
 	<div class="button-footer bye">
-		<md-button ng-if="!connected" class="submit" type="submit" ng-click="connect()">
+		<md-button ng-if="!connected && !connecting" class="submit" type="submit" ng-click="connect()">
 			connect to one now!
 		</md-button>
-		<md-button class="back" type="submit" ng-click="signout()">see you again!</md-button>
+		<md-button ng-if="!connecting" class="back" type="submit" ng-click="signout()">see you again!</md-button>
+		<md-button ng-if="connecting" class="back connect-btn" type="submit" ng-click="stop()">stop!</md-button>
 	</div>
 </div>
