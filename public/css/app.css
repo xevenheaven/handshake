@@ -264,6 +264,10 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	vertical-align: top;
 }
 
+.meettens-left.empty {
+	min-width: 200px;
+}
+
 .meettens-left .meetten-info {
 	display: inline-block;
 	padding-right: 10px;
@@ -387,6 +391,10 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 
 	.meetten-photo img {
 		height: 50px;
+	}
+
+	.meettens-left.empty {
+		min-width: 160px;
 	}
 }
 

@@ -20,7 +20,8 @@
 	</div>
 	<div class="meettens" ng-if="!connecting">
 		<div class="meettens-left"
-			ng-class="{'even': meettensLeft.length <= meettensRight.length}">
+			ng-class="{'even': meettensLeft.length <= meettensRight.length,
+				'empty': meettensLeft.length === 0 && meettensRight.length === 1 && connected}">
 			<div ng-repeat="meetten in meettensLeft"
 				class="meetten-group"
 				ng-show="connected"
