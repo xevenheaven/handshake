@@ -25,13 +25,21 @@
 			"id": "company",
 			"order": 2
 		},
+		"meettens": {
+			"name": "meettens",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "meettens",
+			"order": 3
+		},
 		"photo": {
 			"name": "photo",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
 			"id": "photo",
-			"order": 3
+			"order": 4
 		},
 		"dob": {
 			"name": "dob",
@@ -39,7 +47,7 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "dob",
-			"order": 4
+			"order": 5
 		},
 		"contact": {
 			"name": "contact",
@@ -47,7 +55,7 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "contact",
-			"order": 5
+			"order": 6
 		},
 		"address": {
 			"name": "address",
@@ -55,7 +63,7 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "address",
-			"order": 6
+			"order": 7
 		}
 	}
 }
