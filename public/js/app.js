@@ -25,10 +25,18 @@ App.config(function($stateProvider) {
 		templateUrl: './templates/welcome.html'
 	};
 
+	var profile = {
+		name: 'profile',
+		url: '/profile',
+		templateUrl: './templates/profile.html',
+		params: {user: {}}
+	};
+
 	$stateProvider.state(splash);
 	$stateProvider.state(signin);
 	$stateProvider.state(signup);
 	$stateProvider.state(welcome);
+	$stateProvider.state(profile);
 });
 
 App.controller('SplashScreenController', function SplashScreenController($scope, $state) {
@@ -89,4 +97,62 @@ App.controller('SignUpController', function SignUpController($scope, $state) {
 			}
 		});
 	};
+});
+
+App.controller('WelcomeController', function WelcomeController($scope, $state, $q) {
+	$scope.connected = true;
+
+	if ($scope.connected) {
+		$scope.meettenImgSrc = './images/meetten-autodesk.png';
+	} else {
+		$scope.meettenImgSrc = './images/no-meetten.png';
+	}
+
+	dpd.users.me(function (user) {
+		$scope.name = user.name;
+		$scope.meettens = user.meettens || [];
+		$scope.userImg = user.photo || './images/default.jpg';
+
+		$scope.meettensRight = [];
+		$scope.meettensLeft = [];
+
+		var meettenDetails = $scope.meettens.map(function(meetten, index) {
+			return dpd.users.get(meetten.id).then(function (user) {
+				var tempUser = user;
+				tempUser.time = meetten.time;
+
+				return tempUser;
+			});
+		});
+
+		$q.all(meettenDetails).then(function (results) {
+			results.sort(function (meettenA, meettenB) {
+				if (meettenA.time < meettenB.time) {
+					return 1;
+				} else if (meettenA.time > meettenB.time) {
+					return -1;
+				} else {
+					return 0;
+				}
+			});
+
+			results.forEach(function (user, index) {
+				if (index % 2 === 0) {
+					$scope.meettensRight.push(user);
+				} else {
+					$scope.meettensLeft.push(user);
+				}
+			})
+		});
+	});
+
+	$scope.triggerUser = function (user) {
+		$state.go('profile', {
+			user: user
+		});
+	};
+});
+
+App.controller('ProfileController', function ProfileController($scope, $state, $stateParams) {
+	$scope.user = $stateParams.user;
 });

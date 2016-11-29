@@ -1,0 +1,56 @@
+<div ng-controller="WelcomeController"
+	class="welcome-screen">
+	<div>
+		<img class="title" src="images/meettens_text.png" />
+	</div>
+	<div class="description">
+		welcome, <span class="name">{{name}}!</span>
+	</div>
+	<div class="profile">
+		<div class="photo">
+			<img ng-src="{{userImg}}" />
+		</div>
+		<div class="hand">
+			<img ng-src="{{meettenImgSrc}}" />
+		</div>
+	</div>
+	<div class="meettens">
+		<div ng-if="!meettens.length"></div>
+		<div class="meettens-left"
+			ng-class="{'even': meettensLeft.length === meettensRight.length}">
+			<div ng-repeat="meetten in meettensLeft"
+				class="meetten-group"
+				ng-click="triggerUser(meetten)">
+				<div class="meetten-info">
+					<div class="meetten-name">{{meetten.name}}</div>
+					<div class="meetten-time">{{meetten.time}}</div>
+				</div>
+				<div class="meetten-photo">
+					<img ng-src="{{meetten.photo}}" />
+				</div>
+			</div>
+		</div>
+		<div class="meettens-right"
+			ng-class="{'even': meettensLeft.length === meettensRight.length}">
+			<div ng-repeat="meetten in meettensRight"
+				class="meetten-group"
+				ng-click="triggerUser(meetten)">
+				<div class="meetten-photo">
+					<img ng-src="{{meetten.photo}}" />
+				</div>
+				<div class="meetten-info">
+					<div class="meetten-name">{{meetten.name}}</div>
+					<div class="meetten-time">{{meetten.time}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="join-meetten" ng-if="!meettens.length">
+		<span ng-if="!connected">you don't have a meetten</span>
+		<span ng-if="connected">you're all set!</span>
+	</div>
+	<div ng-if="!meettens.length">
+		<span ng-if="!connected">connect to one now!</span>
+		<span ng-if="connected">start meeting new people!</span>
+	</div>
+</div>

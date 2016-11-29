@@ -1,7 +1,9 @@
 html, body {
 	background: #E7EFF1;
+	color: #5B6C70;
 	font-family: 'Nunito', sans-serif;
 	font-size: 1em;
+	margin: 20px;
 }
 
 /*** SPLASH SCREEN ***/
@@ -174,5 +176,170 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	.camera {
 		padding-top: 30px;
 		width: 25px;
+	}
+}
+
+/*** WELCOME SCREEN ***/
+
+.welcome-screen {
+	color: #7FA69C;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.description .name {
+	font-weight: 700;
+}
+
+.profile {
+	margin-left: 90px;
+}
+
+.photo {
+	border: 5px solid #7FA69C;
+	border-radius: 50%;
+	display: inline-block;
+	height: 200px;
+	overflow: hidden;
+	width: 200px;
+}
+
+.photo img {
+	height: 200px;
+}
+
+.hand {
+	display: inline-block;
+	margin-left: -5px;
+	vertical-align: top;
+}
+
+.hand img {
+	width: 100px;
+}
+
+.meettens > div {
+	min-height: 150px;
+}
+
+.meettens > div:nth-child(2) {
+	border-left: 2px solid #BCD2D6;
+}
+
+.join-meetten {
+	font-size: larger;
+	font-weight: 700;
+	padding-top: 20px;
+}
+
+.meetten-group {
+	padding-bottom: 30px;
+}
+
+.meettens-left {
+	display: inline-block;
+	margin-left: -25px;
+	padding-right: 10px;
+	text-align: right;
+	vertical-align: text-bottom;
+}
+
+.meettens-left.even {
+	margin-left: -10px;
+	margin-top: 50px;
+	vertical-align: top;
+}
+
+.meettens-left .meetten-info {
+	display: inline-block;
+	padding-right: 10px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.meettens-right {
+	display: inline-block;
+	margin-top: -5px;
+	padding-left: 10px;
+	text-align: left;
+}
+
+.meettens-right.even {
+	padding-bottom: 50px;
+}
+
+.meettens-right .meetten-info {
+	display: inline-block;
+	padding-left: 10px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.meettens-left img:hover,
+.meettens-right img:hover {
+	cursor: pointer;
+}
+
+.meetten-photo {
+	border-radius: 50%;
+	display: inline-block;
+	height: 80px;
+	overflow: hidden;
+	vertical-align: middle;
+	width: 80px;
+}
+
+.meetten-photo img {
+	height: 80px;
+}
+
+.meetten-name {
+	font-weight: 700;
+}
+
+.meetten-time {
+	font-size: smaller;
+	font-weight: 300;
+}
+
+@media only screen and (max-device-width: 480px) {
+	body {
+		overflow: auto;
+	}
+
+	.welcome-screen {
+		padding-top: 20px;
+	}
+
+	.profile {
+		margin-left: 60px;
+	}
+
+	.photo {
+		height: 150px;
+		width: 150px;
+	}
+
+	.photo img {
+		height: 150px;
+	}
+
+	.hand {
+		margin-left: -10px;
+	}
+
+	.hand img {
+		width: 70px;
+	}
+
+	.meetten-photo {
+		height: 50px;
+		width: 50px;
+	}
+
+	.meetten-photo img {
+		height: 50px;
 	}
 }
