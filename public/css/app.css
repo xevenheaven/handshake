@@ -441,6 +441,19 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 	padding-bottom: 20px;
 }
 
+.profile-screen .icons {
+	padding-bottom: 20px;
+}
+
+.profile-screen .icon {
+	height: 20px;
+	vertical-align: middle;
+}
+
+.profile-screen .icon:not(:last-child) {
+	margin-right: 25px;
+}
+
 .profile-screen .button-footer {
 	display: inline;
 	width: 40%;
