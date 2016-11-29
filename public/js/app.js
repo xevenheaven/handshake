@@ -104,13 +104,8 @@ App.controller('SignUpController', function SignUpController($scope, $state) {
 });
 
 App.controller('WelcomeController', function WelcomeController($scope, $state, $q) {
-	$scope.connected = true;
-
-	if ($scope.connected) {
-		$scope.meettenImgSrc = './images/meetten-autodesk.png';
-	} else {
-		$scope.meettenImgSrc = './images/no-meetten.png';
-	}
+	$scope.connected = false;
+	$scope.meettenImgSrc = './images/no-meetten.png';
 
 	dpd.users.me(function (user) {
 		$scope.me = user;
@@ -150,6 +145,11 @@ App.controller('WelcomeController', function WelcomeController($scope, $state, $
 			})
 		});
 	});
+
+	$scope.connect = function () {
+		$scope.connected = true;
+		$scope.meettenImgSrc = './images/meetten-autodesk.png';
+	};
 
 	$scope.triggerUser = function (user) {
 		$state.go('profile', {

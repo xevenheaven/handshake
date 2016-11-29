@@ -19,6 +19,7 @@
 			ng-class="{'even': meettensLeft.length <= meettensRight.length}">
 			<div ng-repeat="meetten in meettensLeft"
 				class="meetten-group"
+				ng-show="connected"
 				ng-click="triggerUser(meetten)">
 				<div class="meetten-info">
 					<div class="meetten-name">{{meetten.name}}</div>
@@ -33,6 +34,7 @@
 			ng-class="{'even': meettensLeft.length <= meettensRight.length}">
 			<div ng-repeat="meetten in meettensRight"
 				class="meetten-group"
+				ng-show="connected"
 				ng-click="triggerUser(meetten)">
 				<div class="meetten-photo">
 					<img ng-src="{{meetten.photo}}" />
@@ -44,15 +46,17 @@
 			</div>
 		</div>
 	</div>
-	<div class="join-meetten" ng-if="!meettens.length">
+	<div class="join-meetten"">
 		<span ng-if="!connected">you don't have a meetten</span>
-		<span ng-if="connected">you're all set!</span>
+		<span ng-if="connected && !meettens.length">you're all set!</span>
 	</div>
 	<div ng-if="!meettens.length">
-		<span ng-if="!connected">connect to one now!</span>
 		<span ng-if="connected">start meeting new people!</span>
 	</div>
 	<div class="button-footer bye">
-		<md-button class="submit" type="submit" ng-click="signout()">see you again!</md-button>
+		<md-button ng-if="!connected" class="submit" type="submit" ng-click="connect()">
+			connect to one now!
+		</md-button>
+		<md-button class="back" type="submit" ng-click="signout()">see you again!</md-button>
 	</div>
 </div>

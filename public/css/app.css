@@ -311,9 +311,17 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 
 .button-footer.bye {
-	display: inline-block;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	padding-bottom: 30px;
 	padding-top: 30px;
+}
+
+.button-footer.bye .md-button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media only screen and (max-device-width: 480px) {
