@@ -97,7 +97,12 @@ App.controller('SignUpController', function SignUpController($scope, $state) {
 			if (error) {
 				alert('Please fill in the missing fields!');
 			} else {
-				$state.go('welcome');
+				dpd.users.login({
+					username: $scope.email,
+					password: $scope.password
+				}, function() {
+					$state.go('welcome');
+				});
 			}
 		});
 	};
