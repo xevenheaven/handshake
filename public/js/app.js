@@ -22,7 +22,10 @@ App.config(function($stateProvider) {
 	var welcome = {
 		name: 'welcome',
 		url: '/welcome',
-		templateUrl: './templates/welcome.html'
+		templateUrl: './templates/welcome.html',
+		params: {
+			connected: false
+		}
 	};
 
 	var profile = {
@@ -108,9 +111,9 @@ App.controller('SignUpController', function SignUpController($scope, $state) {
 	};
 });
 
-App.controller('WelcomeController', function WelcomeController($scope, $state, $timeout, $q) {
-	$scope.connected = false;
-	$scope.meettenImgSrc = './images/no-meetten.png';
+App.controller('WelcomeController', function WelcomeController($scope, $state, $stateParams, $timeout, $q) {
+	$scope.connected = $stateParams.connected || false;
+	$scope.meettenImgSrc = !$scope.connected ? './images/no-meetten.png' : './images/meetten-autodesk.png';
 
 	dpd.users.me(function (user) {
 		$scope.me = user;
@@ -186,6 +189,8 @@ App.controller('ProfileController', function ProfileController($scope, $state, $
 	$scope.handImg = $stateParams.handImg;
 
 	$scope.back = function () {
-		$state.go('welcome');
+		$state.go('welcome', {
+			connected: true
+		});
 	};
 });
