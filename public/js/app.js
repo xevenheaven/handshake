@@ -158,6 +158,14 @@ App.controller('WelcomeController', function WelcomeController($scope, $state, $
 			handImg: $scope.meettenImgSrc
 		});
 	};
+
+	$scope.signout = function () {
+		dpd.users.logout(function (result, error) {
+			if (result) {
+				$state.go('splash');
+			}
+		});
+	};
 });
 
 App.controller('ProfileController', function ProfileController($scope, $state, $stateParams) {
@@ -169,9 +177,5 @@ App.controller('ProfileController', function ProfileController($scope, $state, $
 
 	$scope.back = function () {
 		$state.go('welcome');
-	};
-
-	$scope.connect = function () {
-
 	};
 });

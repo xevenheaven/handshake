@@ -106,6 +106,7 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 
 .button-footer {
+	color: #7D7E7F;
 	width: 40%;
 }
 
@@ -307,6 +308,12 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 .meetten-time {
 	font-size: smaller;
 	font-weight: 300;
+}
+
+.button-footer.bye {
+	display: inline-block;
+	padding-bottom: 30px;
+	padding-top: 30px;
 }
 
 @media only screen and (max-device-width: 480px) {
